@@ -14,7 +14,7 @@ public:
 	Player& operator=(const Player&) = delete;
 
 	void Update(float deltaTime, int screenWidth, int screenHeight, const Control& control);
-	void Draw() const;
+	void Draw(const Control& control) const;
 	Vector2 GetPosition() const;
 	Rectangle GetHitbox() const;
 	void TakeDamage(int damage);

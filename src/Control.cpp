@@ -27,7 +27,6 @@ Vector2 Control::GetMovement() const
 bool Control::IsSlowMovement() const
 {
 	return IsKeyDown(KEY_SPACE);
-    
 }
 
 bool Control::IsShooting() const

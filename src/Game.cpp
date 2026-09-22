@@ -89,7 +89,7 @@ void Game::Run()
 			bullet.Draw();
 		}
 		enemy_.Draw();
-		player_.Draw();
+		player_.Draw(control_);
 		if (!player_.IsAlive())
 		{
 			DrawText("GAME OVER", screenWidth_ / 2 - 90, screenHeight_ / 2 - 20, 36, RED);
