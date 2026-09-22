@@ -1,0 +1,21 @@
+# ninja log v7
+2	42	8117957813238836	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	4c34c5965312f029
+2	42	8117957813238836	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	4c34c5965312f029
+42	38052	8117958193340866	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	d3e43a058134ebbc
+42	38052	8117958193340866	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	d3e43a058134ebbc
+38052	38173	8117958193379191	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	dd277f630e9b4e4d
+38052	38173	8117958193379191	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	dd277f630e9b4e4d
+38174	38209	8117958194913354	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	ca435e621989a9f
+38174	38209	8117958194913354	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	ca435e621989a9f
+38209	38245	8117958195276918	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	9ea626200666da28
+38209	38245	8117958195276918	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	9ea626200666da28
+38245	38280	8117958195626081	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	5ce3e0bdce93098c
+38245	38280	8117958195626081	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	5ce3e0bdce93098c
+38280	38315	8117958195981521	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	ce5a50ef702bd768
+38280	38315	8117958195981521	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	ce5a50ef702bd768
+38316	38352	8117958196345066	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	c3c96d37228bd713
+38316	38352	8117958196345066	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	c3c96d37228bd713
+38352	38402	8117958196842548	CMakeFiles/raylib-populate-complete	65712a25c150bc17
+38352	38402	8117958196842548	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	65712a25c150bc17
+38352	38402	8117958196842548	C:/Cmake/don.maku/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete	65712a25c150bc17
+38352	38402	8117958196842548	C:/Cmake/don.maku/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	65712a25c150bc17
