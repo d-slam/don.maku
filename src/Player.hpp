@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Control.hpp"
+
 #include <raylib.h>
 
 class Player
@@ -11,7 +13,7 @@ public:
 	Player(const Player&) = delete;
 	Player& operator=(const Player&) = delete;
 
-	void Update(float deltaTime, int screenWidth, int screenHeight);
+	void Update(float deltaTime, int screenWidth, int screenHeight, const Control& control);
 	void Draw() const;
 	Vector2 GetPosition() const;
 

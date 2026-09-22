@@ -13,32 +13,14 @@ Player::~Player()
 	UnloadTexture(texture_);
 }
 
-void Player::Update(float deltaTime, int screenWidth, int screenHeight)
+void Player::Update(float deltaTime, int screenWidth, int screenHeight, const Control& control)
 {
-	Vector2 direction{};
-
-	if (IsKeyDown(KEY_W))
-	{
-		direction.y -= 1.0f;
-	}
-	if (IsKeyDown(KEY_S))
-	{
-		direction.y += 1.0f;
-	}
-	if (IsKeyDown(KEY_A))
-	{
-		direction.x -= 1.0f;
-	}
-	if (IsKeyDown(KEY_D))
-	{
-		direction.x += 1.0f;
-	}
+	Vector2 direction = control.GetMovement();
 
 	if (direction.x != 0.0f || direction.y != 0.0f)
 	{
 		direction = Vector2Normalize(direction);
-		const bool slowMovement = IsKeyDown(KEY_LEFT_SHIFT) || IsKeyDown(KEY_RIGHT_SHIFT);
-		const float movementSpeed = slowMovement ? speed_ * speedSlowFak_ : speed_;
+		const float movementSpeed = control.IsSlowMovement() ? speed_ * speedSlowFak_ : speed_;
 		position_.x += direction.x * movementSpeed * deltaTime;
 		position_.y += direction.y * movementSpeed * deltaTime;
 	}

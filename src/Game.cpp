@@ -23,10 +23,10 @@ void Game::Run()
 	while (!WindowShouldClose())
 	{
 		const float deltaTime = GetFrameTime();
-		player_.Update(deltaTime, screenWidth_, screenHeight_);
+		player_.Update(deltaTime, screenWidth_, screenHeight_, control_);
 
 		shotCooldown_ -= deltaTime;
-		if (IsKeyDown(KEY_SPACE) && shotCooldown_ <= 0.0f)
+		if (control_.IsShooting() && shotCooldown_ <= 0.0f)
 		{
 			bullets_.emplace_back(bulletTexture_, player_.GetPosition(), 1000.0f);
 			shotCooldown_ = 0.1f;

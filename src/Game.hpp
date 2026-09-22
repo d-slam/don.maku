@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Bullet.hpp"
+#include "Control.hpp"
 #include "Player.hpp"
 
 #include <vector>
@@ -19,6 +20,7 @@ public:
 private:
 	int screenWidth_;
 	int screenHeight_;
+	Control control_;
 	Player player_;
 	Texture2D bulletTexture_{};
 	std::vector<Bullet> bullets_;

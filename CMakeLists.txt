@@ -26,6 +26,7 @@ add_executable(Danmaku
     src/Game.cpp
     src/Player.cpp
     src/Bullet.cpp
+    src/Control.cpp
 )
 
 target_link_libraries(Danmaku PRIVATE raylib)
