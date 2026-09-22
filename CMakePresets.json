@@ -8,6 +8,9 @@
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "warnings": {
+                "deprecated": false
             }
         }
     ],

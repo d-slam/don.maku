@@ -15,7 +15,7 @@ Game::~Game()
 
 void Game::Run()
 {
-	SetTargetFPS(60);
+	SetTargetFPS(144);
 
 	while (!WindowShouldClose())
 	{

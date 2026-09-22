@@ -37,8 +37,10 @@ void Player::Update(float deltaTime, int screenWidth, int screenHeight)
 	if (direction.x != 0.0f || direction.y != 0.0f)
 	{
 		direction = Vector2Normalize(direction);
-		position_.x += direction.x * speed_ * deltaTime;
-		position_.y += direction.y * speed_ * deltaTime;
+		const bool slowMovement = IsKeyDown(KEY_LEFT_SHIFT) || IsKeyDown(KEY_RIGHT_SHIFT);
+		const float movementSpeed = slowMovement ? speed_ * speedSlowFak_ : speed_;
+		position_.x += direction.x * movementSpeed * deltaTime;
+		position_.y += direction.y * movementSpeed * deltaTime;
 	}
 
 	const float halfWidth = static_cast<float>(texture_.width) / 2.0f;

@@ -17,5 +17,6 @@ public:
 private:
 	Texture2D texture_{};
 	Vector2 position_{};
-	float speed_ = 300.0f;
+	float speed_ = 800.0f;
+    float speedSlowFak_ = 0.4f;
 };
