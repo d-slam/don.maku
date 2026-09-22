@@ -2,6 +2,7 @@
 
 #include "Bullet.hpp"
 #include "Control.hpp"
+#include "Enemy.hpp"
 #include "Player.hpp"
 
 #include <vector>
@@ -22,7 +23,10 @@ private:
 	int screenHeight_;
 	Control control_;
 	Player player_;
+	Enemy enemy_;
 	Texture2D bulletTexture_{};
-	std::vector<Bullet> bullets_;
+	std::vector<Bullet> playerBullets_;
+	std::vector<Bullet> enemyBullets_;
 	float shotCooldown_ = 0.0f;
+	float enemyShotCooldown_ = 0.0f;
 };

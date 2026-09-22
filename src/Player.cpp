@@ -40,3 +40,9 @@ Vector2 Player::GetPosition() const
 {
 	return position_;
 }
+
+Rectangle Player::GetHitbox() const
+{
+	constexpr float hitboxSize = 8.0f;
+	return { position_.x - hitboxSize / 2.0f, position_.y - hitboxSize / 2.0f, hitboxSize, hitboxSize };
+}

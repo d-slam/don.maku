@@ -16,6 +16,7 @@ public:
 	void Update(float deltaTime, int screenWidth, int screenHeight, const Control& control);
 	void Draw() const;
 	Vector2 GetPosition() const;
+	Rectangle GetHitbox() const;
 
 private:
 	Texture2D texture_{};
