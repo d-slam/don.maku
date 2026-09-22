@@ -1,20 +1,17 @@
+#include "Game.hpp"
+
 #include <raylib.h>
 
 int main()
 {
-    InitWindow(800, 600, "Danmaku");
+    constexpr int screenWidth = 800;
+    constexpr int screenHeight = 600;
 
-    SetTargetFPS(60);
+    InitWindow(screenWidth, screenHeight, "Danmaku");
 
-    while (!WindowShouldClose())
     {
-        BeginDrawing();
-
-        ClearBackground(BLACK);
-
-        DrawText("Danmaku", 20, 20, 30, WHITE);
-
-        EndDrawing();
+        Game game(screenWidth, screenHeight);
+        game.Run();
     }
 
     CloseWindow();

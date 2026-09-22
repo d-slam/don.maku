@@ -21,6 +21,8 @@ FetchContent_MakeAvailable(raylib)
 
 add_executable(Danmaku
     src/main.cpp
+    src/Game.cpp
+    src/Player.cpp
 )
 
 target_link_libraries(Danmaku PRIVATE raylib)
