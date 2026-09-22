@@ -53,3 +53,8 @@ void Player::Draw() const
 {
 	DrawTextureV(texture_, { position_.x - texture_.width / 2.0f, position_.y - texture_.height / 2.0f }, WHITE);
 }
+
+Vector2 Player::GetPosition() const
+{
+	return position_;
+}

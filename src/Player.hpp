@@ -13,6 +13,7 @@ public:
 
 	void Update(float deltaTime, int screenWidth, int screenHeight);
 	void Draw() const;
+	Vector2 GetPosition() const;
 
 private:
 	Texture2D texture_{};
