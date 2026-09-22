@@ -15,6 +15,11 @@ Player::~Player()
 
 void Player::Update(float deltaTime, int screenWidth, int screenHeight, const Control& control)
 {
+	if (!IsAlive())
+	{
+		return;
+	}
+
 	Vector2 direction = control.GetMovement();
 
 	if (direction.x != 0.0f || direction.y != 0.0f)
@@ -34,6 +39,14 @@ void Player::Update(float deltaTime, int screenWidth, int screenHeight, const Co
 void Player::Draw() const
 {
 	DrawTextureV(texture_, { position_.x - texture_.width / 2.0f, position_.y - texture_.height / 2.0f }, WHITE);
+
+	constexpr int barWidth = 160;
+	constexpr int barHeight = 12;
+	const int barX = 20;
+	const int barY = 20;
+	DrawRectangle(barX, barY, barWidth, barHeight, DARKGRAY);
+	DrawRectangle(barX, barY, barWidth * health_ / maxHealth_, barHeight, GREEN);
+	DrawText(TextFormat("HP: %d/%d", health_, maxHealth_), barX, barY + barHeight + 4, 18, WHITE);
 }
 
 Vector2 Player::GetPosition() const
@@ -45,4 +58,14 @@ Rectangle Player::GetHitbox() const
 {
 	constexpr float hitboxSize = 8.0f;
 	return { position_.x - hitboxSize / 2.0f, position_.y - hitboxSize / 2.0f, hitboxSize, hitboxSize };
+}
+
+void Player::TakeDamage(int damage)
+{
+	health_ = std::max(0, health_ - damage);
+}
+
+bool Player::IsAlive() const
+{
+	return health_ > 0;
 }

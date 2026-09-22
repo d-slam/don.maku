@@ -17,10 +17,14 @@ public:
 	void Draw() const;
 	Vector2 GetPosition() const;
 	Rectangle GetHitbox() const;
+	void TakeDamage(int damage);
+	bool IsAlive() const;
 
 private:
 	Texture2D texture_{};
 	Vector2 position_{};
 	float speed_ = 800.0f;
     float speedSlowFak_ = 0.4f;
+	int maxHealth_ = 3;
+	int health_ = maxHealth_;
 };

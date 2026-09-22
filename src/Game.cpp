@@ -30,7 +30,7 @@ void Game::Run()
 		enemy_.Update(deltaTime, screenWidth_);
 
 		shotCooldown_ -= deltaTime;
-		if (control_.IsShooting() && shotCooldown_ <= 0.0f)
+		if (player_.IsAlive() && control_.IsShooting() && shotCooldown_ <= 0.0f)
 		{
 			playerBullets_.emplace_back(bulletTexture_, player_.GetPosition(), Vector2{ 0.0f, -1.0f }, 1000.0f);
 			shotCooldown_ = 0.1f;
@@ -69,7 +69,12 @@ void Game::Run()
 		enemyBullets_.erase(
 			std::remove_if(enemyBullets_.begin(), enemyBullets_.end(), [this](const Bullet& bullet)
 			{
-				return bullet.IsOffScreen(screenHeight_) || bullet.CollidesWith(player_.GetHitbox());
+				if (bullet.CollidesWith(player_.GetHitbox()))
+				{
+					player_.TakeDamage(1);
+					return true;
+				}
+				return bullet.IsOffScreen(screenHeight_);
 			}),
 			enemyBullets_.end());
 
@@ -85,6 +90,10 @@ void Game::Run()
 		}
 		enemy_.Draw();
 		player_.Draw();
+		if (!player_.IsAlive())
+		{
+			DrawText("GAME OVER", screenWidth_ / 2 - 90, screenHeight_ / 2 - 20, 36, RED);
+		}
 		EndDrawing();
 	}
 }
