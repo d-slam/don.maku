@@ -22,10 +22,12 @@ private:
 	enum class BossPattern
 	{
 		Single,
-		RadialBurst
+		RadialBurst,
+		Spiral
 	};
 
 	void ShootRadialBurst();
+	void ShootSpiral();
 
 	int screenWidth_;
 	int screenHeight_;
@@ -39,4 +41,5 @@ private:
 	float enemyShotCooldown_ = 0.0f;
 	BossPattern bossPattern_ = BossPattern::Single;
 	float bossPatternTimer_ = 0.0f;
+	float spiralAngle_ = 0.0f;
 };

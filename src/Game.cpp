@@ -9,6 +9,9 @@ namespace
 	constexpr int kRadialBurstBulletCount = 30;
 	constexpr float kRadialBurstBulletSpeed = 220.0f;
 	constexpr float kBossPatternDuration = 5.0f;
+	constexpr float kSpiralBulletSpeed = 200.0f;
+	constexpr float kSpiralShotCooldown = 0.05f;
+	constexpr float kSpiralAngleStep = 0.35f;
 }
 
 Game::Game(int screenWidth, int screenHeight)
@@ -49,7 +52,19 @@ void Game::Run()
 		if (enemy_.IsAlive() && bossPatternTimer_ >= kBossPatternDuration)
 		{
 			bossPatternTimer_ = 0.0f;
-			bossPattern_ = bossPattern_ == BossPattern::Single ? BossPattern::RadialBurst : BossPattern::Single;
+			switch (bossPattern_)
+			{
+			case BossPattern::Single:
+				bossPattern_ = BossPattern::RadialBurst;
+				break;
+			case BossPattern::RadialBurst:
+				bossPattern_ = BossPattern::Spiral;
+				spiralAngle_ = 0.0f;
+				break;
+			case BossPattern::Spiral:
+				bossPattern_ = BossPattern::Single;
+				break;
+			}
 			enemyShotCooldown_ = 0.0f;
 		}
 
@@ -64,6 +79,10 @@ void Game::Run()
 			case BossPattern::RadialBurst:
 				ShootRadialBurst();
 				enemyShotCooldown_ = 1.5f;
+				break;
+			case BossPattern::Spiral:
+				ShootSpiral();
+				enemyShotCooldown_ = kSpiralShotCooldown;
 				break;
 			}
 		}
@@ -132,4 +151,12 @@ void Game::ShootRadialBurst()
 		const Vector2 direction{ std::cos(angle), std::sin(angle) };
 		enemyBullets_.emplace_back(bulletTexture_, origin, direction, kRadialBurstBulletSpeed);
 	}
+}
+
+void Game::ShootSpiral()
+{
+	const Vector2 origin = enemy_.GetPosition();
+	const Vector2 direction{ std::cos(spiralAngle_), std::sin(spiralAngle_) };
+	enemyBullets_.emplace_back(bulletTexture_, origin, direction, kSpiralBulletSpeed);
+	spiralAngle_ += kSpiralAngleStep;
 }
