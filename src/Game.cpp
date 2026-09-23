@@ -6,12 +6,12 @@
 
 namespace
 {
-	constexpr int kRadialBurstBulletCount = 30;
-	constexpr float kRadialBurstBulletSpeed = 220.0f;
-	constexpr float kBossPatternDuration = 5.0f;
-	constexpr float kSpiralBulletSpeed = 200.0f;
-	constexpr float kSpiralShotCooldown = 0.05f;
-	constexpr float kSpiralAngleStep = 0.35f;
+	constexpr int kRadialBurstBulletCount = 60;
+	constexpr float kRadialBurstBulletSpeed = 350.0f;
+	constexpr float kBossPatternDuration = 3.0f;
+	constexpr float kSpiralBulletSpeed = 500.0f;
+	constexpr float kSpiralShotCooldown = 0.01f;
+	constexpr float kSpiralAngleStep = 0.15f;
 }
 
 Game::Game(int screenWidth, int screenHeight)
