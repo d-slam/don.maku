@@ -19,6 +19,14 @@ public:
 	void Run();
 
 private:
+	enum class BossPattern
+	{
+		Single,
+		RadialBurst
+	};
+
+	void ShootRadialBurst();
+
 	int screenWidth_;
 	int screenHeight_;
 	Control control_;
@@ -29,4 +37,6 @@ private:
 	std::vector<Bullet> enemyBullets_;
 	float shotCooldown_ = 0.0f;
 	float enemyShotCooldown_ = 0.0f;
+	BossPattern bossPattern_ = BossPattern::Single;
+	float bossPatternTimer_ = 0.0f;
 };
